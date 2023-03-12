@@ -1,0 +1,48 @@
+{% extends 'base.html' %} 
+{% block content %}
+
+    <main class="main main--project">
+        <div>
+            <img 
+            class="hero"
+            src="{{ url_for('static', filename=project['hero']) }}"
+            alt="A hand holding a pen, about to write somthing in a planner"/>
+
+            <article class="project">
+                <article class="project__content">
+                    <h2 class="project__heading">{{ project['name'] }}</h2>
+
+                    <p>The Movie Watchlist was my biggest project so far. It is the final project in the Flask Web Development certification I took last February (2023).</p>
+
+                    <p>It consists in a web app that allows registered users to have a unique movie watchlist online. 
+                    After registration, you can add any movie you like to your watchlist and mark when you watch it.</p>
+
+                    <p>The app includes an important accessibility feature: dark/bright mode, so all eyes can feel comfortable.
+                    Also, it will save the date you last watched a movie and it's possible to rank it with 1-5 stars.</p>           
+                    
+                    <p>Please, feel free to try it by yourself: it's a lot of fun!</p>
+                </article>
+
+                <section>
+                    <article class="project__meta-group">
+                        <h3 class="project__heading project__heading--meta">Technologies used</h3>
+
+                        <ul class="technology-list">
+                            <li class="technology-list__item">Python</li>
+                            <li class="technology-list__item">HTML</li>
+                            <li class="technology-list__item">CSS</li>
+                            <li class="technology-list__item">Flask</li>
+							<li class="technology-list__item">MongoDB</li>
+                        </ul>
+                    </article>
+
+                    <a class="cta" href="{{ project['prod'] }}" target="_blank">
+                        <img class="cta-icon" src="{{ url_for('static', filename='img/pointer.svg') }}" >
+                        View production
+                    </a>
+                </section>
+            </article>
+        </div>
+    </main>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %} 
+{% block content %}
+
+    <main class="main main--project">
+        <div>
+            <img 
+            class="hero"
+            src="{{ url_for('static', filename=project['hero']) }}"
+            alt="A hand holding a pen, about to write somthing in a planner"/>
+
+            <article class="project">
+                <article class="project__content">
+                    <h2 class="project__heading">{{ project['name'] }}</h2>
+
+                <p>The Habit Tracking app is something I made during my Flask Web Development certification last February (2023).</p>
+
+                <p>It is a simple yet pretty web app that allows us to add and track habits on a moving calendar.</p>
+                    
+                <p>It was made by using Python/Flask and all the entries are saved in a database thanks to MongoDB.</p>
+   
+                </article>
+
+                <section>
+                    <article class="project__meta-group">
+                        <h3 class="project__heading project__heading--meta">Technologies used</h3>
+
+                        <ul class="technology-list">
+                            <li class="technology-list__item">Python</li>
+                            <li class="technology-list__item">HTML</li>
+                            <li class="technology-list__item">CSS</li>
+                            <li class="technology-list__item">Flask</li>
+							<li class="technology-list__item">MongoDB</li>
+                        </ul>
+                    </article>
+
+                    <a class="cta" href="{{ project['prod'] }}" target="_blank">
+                        <img class="cta-icon" src="{{ url_for('static', filename='img/pointer.svg') }}">
+                        View production
+                    </a>
+                </section>
+            </article>
+        </div>
+    </main>
+
+{% endblock %}

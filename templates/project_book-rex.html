@@ -1,0 +1,47 @@
+{% extends 'base.html' %} 
+{% block content %}
+
+    <main class="main main--project">
+        <div>
+            <img 
+            class="hero"
+            src="{{ url_for('static', filename=project['hero']) }}"
+            alt="A hand holding a pen, about to write somthing in a planner"/>
+
+            <article class="project">
+                <article class="project__content">
+                    <h2 class="project__heading">{{ project['name'] }}</h2>
+
+
+                    <p> BookRex is a web application that collects reading recommendations from users. 
+                        Anyone can submit their book recommendations, contributing to spreading the word around.</p>
+
+                    <p> This was my Final Project for Harvard's CS50 and I am very proud of it.
+                        It was made in Python/Flask and the data is saved in a SQL database.</p>
+
+                    <p>Please, feel free to contribute by talking about the books you love!</p>
+                </article>
+
+                <section>
+                    <article class="project__meta-group">
+                        <h3 class="project__heading project__heading--meta">Technologies used</h3>
+
+                        <ul class="technology-list">
+                            <li class="technology-list__item">Python</li>
+                            <li class="technology-list__item">HTML</li>
+                            <li class="technology-list__item">CSS</li>
+                            <li class="technology-list__item">Flask</li>
+							<li class="technology-list__item">SQL</li>
+                        </ul>
+                    </article>
+
+                    <a class="cta" href="{{ project['prod'] }}" target="_blank">
+                        <img class="cta-icon" src="{{ url_for('static', filename='img/pointer.svg') }}" >
+                        View production
+                    </a>
+                </section>
+            </article>
+        </div>
+    </main>
+
+{% endblock %}
